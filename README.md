@@ -1,9 +1,9 @@
-# PEPSI-MAN
+# ZIOR
 가수/래퍼 ZIORPARK 페이지
 
 <img src="/src/images/zior.png" width="300px"/>
 
-## 📖 PEPSI-MAN
+## 📖 ZIOR
 > 2020.11 - 2022.06
 - 개인 프로젝트
 - Media Query를 이용한 반응형 웹 구현

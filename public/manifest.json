@@ -4,8 +4,8 @@
     "display": "standalone",
     "scope": "/",
     "start_url": ".",
-    "name": "PepSiMan",
-    "short_name": "PepSiMan",
+    "name": "Zior",
+    "short_name": "Zior",
     "icons": [
         {
             "src": "/pwa/icon-192x192.png",

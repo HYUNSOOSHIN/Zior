@@ -55,7 +55,7 @@ const Login = () => {
       <AdminButton onClick={onClickAdminButton}>ADMIN</AdminButton>
 
       <InputView>
-        <Title>PepSiMan</Title>
+        <Title>Zior</Title>
         <Img src={zior} alt="loginImage" />
         <Button onClick={onClickLogin}>Anonymously Login</Button>
         <Button onClick={onClickSocilLogin}>
