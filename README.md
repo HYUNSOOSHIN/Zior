@@ -46,4 +46,4 @@ Pushing to `master` deploys automatically to GitHub Pages via GitHub Actions (`.
 Firebase config values in `.env` must be registered as repository secrets (`gh secret set -f .env`).
 
 ## 🚀 Results
-https://pepsi-man.hyunsooshin.com
+https://zior.hyunsooshin.com
