@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import { usePageTitle } from "utils/util"
 import { dbService } from "../../fireBase"
 import Layout from "../common/Layout"
+import LazyImage from "../common/LazyImage"
 
 const Home = () => {
+  usePageTitle("Zior")
   const [mainImage, setMainImage] = useState("")
 
   useEffect(() => {
@@ -16,7 +19,9 @@ const Home = () => {
 
   return (
     <Layout>
-      <MainSection>{mainImage && <img src={mainImage} alt={"home img"} />}</MainSection>
+      <MainSection>
+        <LazyImage eager src={mainImage} alt={"home img"} />
+      </MainSection>
     </Layout>
   )
 }
@@ -32,6 +37,7 @@ const MainSection = styled.section`
   margin: 0 auto;
   & > img {
     width: 524px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
   }
 

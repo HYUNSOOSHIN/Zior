@@ -1,12 +1,15 @@
 import React from "react"
 import styled from "styled-components"
+import LazyImage from "../common/LazyImage"
 
 const PhotoItem = (props) => {
   const { img, onClick } = props
 
   return (
     <Container onClick={onClick}>
-      <div className="img-view">{img && <img src={img} alt={"photo image"} loading="lazy" />}</div>
+      <div className="img-view">
+        <LazyImage src={img} alt={"photo image"} />
+      </div>
     </Container>
   )
 }

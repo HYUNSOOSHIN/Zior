@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import styled from "styled-components"
 import { dbService } from "../../../fireBase"
+import { usePageTitle } from "utils/util"
 import Layout from "../../common/Layout"
 import AlbumItem from "../../item/AlbumItem"
 
 const Albums = () => {
+  usePageTitle("앨범 | Zior")
   const history = useHistory()
   const [albumList, setAlbumList] = useState([])
 

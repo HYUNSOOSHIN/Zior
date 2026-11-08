@@ -1,12 +1,15 @@
 import React from "react"
 import styled from "styled-components"
+import LazyImage from "../common/LazyImage"
 
 const AlbumItem = (props) => {
   const { albumItem, onClick } = props
 
   return (
     <Container onClick={onClick}>
-      <div className="img-view">{albumItem.imageUrl && <img src={albumItem.imageUrl} alt={"album image"} loading="lazy" />}</div>
+      <div className="img-view">
+        <LazyImage src={albumItem.imageUrl} alt={"album image"} />
+      </div>
       <p>{albumItem.title}</p>
       <div>
         <p id={"artist"}>{albumItem.artist}</p>

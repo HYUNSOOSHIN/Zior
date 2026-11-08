@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import LazyImage from "../common/LazyImage"
 
 export default function PhotoDialog(props) {
   const { open, onClose, img } = props
@@ -7,7 +8,7 @@ export default function PhotoDialog(props) {
   return (
     <Backdrop open={open} onClick={onClose}>
       <Container onClick={(e) => e.stopPropagation()}>
-        <img src={img} alt="사진" />
+        <LazyImage eager src={img} alt="사진" />
       </Container>
     </Backdrop>
   )

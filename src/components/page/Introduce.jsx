@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { dbService } from "../../fireBase"
+import { usePageTitle } from "utils/util"
 import Layout from "../common/Layout"
+import LazyImage from "../common/LazyImage"
 import instagram from "./../../images/instagram.png"
 import tiktok from "./../../images/tiktok.png"
 import youtube from "./../../images/youtube.png"
@@ -9,6 +11,7 @@ import soundcloud from "./../../images/soundcloud.png"
 
 const Introduce = () => {
   const [profileInfo, setProfileInfo] = useState({})
+  usePageTitle("소개 | Zior")
 
   useEffect(() => {
     const unsubscribe = dbService.collection("introduce").onSnapshot((snapshot) => {
@@ -21,7 +24,9 @@ const Introduce = () => {
   return (
     <Layout>
       {/* 프로필 이미지 */}
-      <ProfileImgSection>{profileInfo.imageUrl && <img src={profileInfo.imageUrl} alt={"profile img"} />}</ProfileImgSection>
+      <ProfileImgSection>
+        <LazyImage eager src={profileInfo.imageUrl} alt={"profile img"} />
+      </ProfileImgSection>
       {/* 프로필 */}
       <ProfileSection>
         <Title>PROFILE</Title>
@@ -87,6 +92,7 @@ const ProfileImgSection = styled.section`
   margin: 0 auto;
   & > img {
     width: 524px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
   }
   @media (max-width: 768px) {

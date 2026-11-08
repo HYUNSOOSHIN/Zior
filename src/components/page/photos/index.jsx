@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { dbService } from "../../../fireBase"
+import { usePageTitle } from "utils/util"
 import Layout from "../../common/Layout"
 import PhotoItem from "components/item/PhotoItem"
 import PhotoDialog from "components/dialog/PhotoDialog"
 
 const Photos = () => {
+  usePageTitle("사진 | Zior")
   const [photoDialog, setPhotoDialog] = useState({ open: false, img: null })
   const [photoList, setPhotoList] = useState([])
 

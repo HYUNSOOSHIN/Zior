@@ -5,11 +5,13 @@ import { useSelector } from "react-redux"
 import { authService } from "../../fireBase"
 import MenuIcon from "@material-ui/icons/Menu"
 import Toggle from "./Toggle"
+import { isAdmin, ADMIN_FLAG } from "utils/util"
 
 const Header = (props) => {
   const history = useHistory()
   const { hamberger, setHamberger } = props
   const { user } = useSelector((state) => state.userReducer)
+  const admin = isAdmin(user)
 
   useEffect(() => {
     const onResize = () => {
@@ -23,48 +25,36 @@ const Header = (props) => {
   }, [])
 
   const onClickLogout = useCallback(() => {
+    localStorage.removeItem(ADMIN_FLAG)
     authService.signOut()
     history.replace("/")
   }, [])
 
   return (
     <Container>
-      <LogoLink to={user.email?.includes("admin") ? "/admin" : "/"}>ZIOR PARK</LogoLink>
+      <LogoLink to={admin ? "/admin" : "/"}>ZIOR PARK</LogoLink>
       <OpacityView hamberger={hamberger} onClick={() => setHamberger(false)} />
       <NaviView id={"navi"} hamberger={hamberger} onClick={(e) => e.stopPropagation()}>
         <AbsoluteView>
           <ToggleView hamberger={hamberger}>
             <Toggle />
           </ToggleView>
-          <UserView>
-            <UserName>{user.email?.includes("admin") ? "Admin" : user.isAnonymous ? "Person" : user.displayName}</UserName>
-            <LogoutButton onClick={onClickLogout}>logout</LogoutButton>
-          </UserView>
+          {admin && (
+            <UserView>
+              <UserName>Admin</UserName>
+              <LogoutButton onClick={onClickLogout}>logout</LogoutButton>
+            </UserView>
+          )}
         </AbsoluteView>
 
-        <LogoLink
-          className={history.location.pathname.includes("introduce") ? "active" : ""}
-          to={user.email?.includes("admin") ? "/admin/introduce" : "/introduce"}
-        >
+        <LogoLink className={history.location.pathname.includes("introduce") ? "active" : ""} to={admin ? "/admin/introduce" : "/introduce"}>
           Introduce
         </LogoLink>
-        <LogoLink
-          className={history.location.pathname.includes("photo") ? "active" : ""}
-          to={user.email?.includes("admin") ? "/admin/photos" : "/photos"}
-        >
+        <LogoLink className={history.location.pathname.includes("photo") ? "active" : ""} to={admin ? "/admin/photos" : "/photos"}>
           Photos
         </LogoLink>
-        <LogoLink
-          className={history.location.pathname.includes("album") ? "active" : ""}
-          to={user.email?.includes("admin") ? "/admin/albums" : "/albums"}
-        >
+        <LogoLink className={history.location.pathname.includes("album") ? "active" : ""} to={admin ? "/admin/albums" : "/albums"}>
           Albums
-        </LogoLink>
-        <LogoLink
-          className={history.location.pathname.includes("talk") ? "active" : ""}
-          to={user.email?.includes("admin") ? "/admin/talks" : "/talks"}
-        >
-          Talks
         </LogoLink>
       </NaviView>
 

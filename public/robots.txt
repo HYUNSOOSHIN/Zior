@@ -1,3 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin
+
+Sitemap: https://zior.hyunsooshin.com/sitemap.xml

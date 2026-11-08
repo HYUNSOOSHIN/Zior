@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom"
 import styled from "styled-components"
+import { usePageTitle } from "utils/util"
 import { dbService } from "../../../fireBase"
 import Layout from "../../common/Layout"
+import LazyImage from "../../common/LazyImage"
 import LyricsDialog from "../../dialog/LyricsDialog"
 import { IconButton } from "@material-ui/core"
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks"
 import YouTubeIcon from "@material-ui/icons/YouTube"
 
 const Album = (props) => {
+  usePageTitle("앨범 | Zior")
   const history = useHistory()
   const { albumSeq } = props.match.params
   const [album, setAlbum] = useState({})
@@ -38,7 +41,9 @@ const Album = (props) => {
     <Layout>
       <LyricsDialog open={lyricsDialog.open} onClose={() => setLyricsDialog({ open: false, track: {} })} track={lyricsDialog.track} />
       <Section>
-        <div className="img-view">{album.imageUrl && <img src={album.imageUrl} alt={"앨범 이미지"} />}</div>
+        <div className="img-view">
+          <LazyImage eager src={album.imageUrl} alt={"앨범 이미지"} />
+        </div>
         <UL>
           <LI>
             <p>NO.</p>

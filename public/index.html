@@ -5,9 +5,9 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
   <meta name="viewport"
-    content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1" />
+    content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#000000" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/pwa/icon-192x192.png" />
   <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -26,28 +26,41 @@
   <!-- style reset -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
 
-  <link rel="canonical" href="https://zior.hyunsooshin.com">
+  <link rel="canonical" href="https://zior.hyunsooshin.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
 
   <title>Zior</title>
-  <meta name="description" content="this web is ziorpark page" />
-  <meta name="keywords" content="ziorpark, 지올팍, pepsi, 펩시" />
+  <meta name="description" content="ZIORPARK의 공식 페이지. 앨범과 뮤직비디오, 사진, 프로필을 만나보세요." />
+  <meta name="keywords" content="ziorpark, zior, 펩시맨, pepsiman, 앨범, 뮤직비디오" />
   <meta name="author" content="HYUNSOOSHIN" />
 
   <!-- og tag -->
   <meta property="og:site_name" content="Zior" />
   <meta property="og:title" content="Zior" />
-  <meta property="og:description" content="this web is ziorpark page" />
+  <meta property="og:description" content="ZIORPARK의 공식 페이지. 앨범과 뮤직비디오, 사진, 프로필을 만나보세요." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://zior.hyunsooshin.com" />
-  <meta property="og:image" content="%PUBLIC_URL%/ogimage.jpg" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Zior 대표 이미지" />
+  <meta property="og:url" content="https://zior.hyunsooshin.com/" />
+  <meta property="og:image" content="https://zior.hyunsooshin.com/ogimage.jpg" />
 
   <!-- twitter tag -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:creator" content="HYUNSOOSHIN" />
   <meta name="twitter:title" content="Zior" />
-  <meta name="twitter:description" content="this web is ziorpark page" />
-  <meta name="twitter:image" content="%PUBLIC_URL%/ogimage.jpg" />
+  <meta name="twitter:description" content="ZIORPARK의 공식 페이지. 앨범과 뮤직비디오, 사진, 프로필을 만나보세요." />
+  <meta name="twitter:image" content="https://zior.hyunsooshin.com/ogimage.jpg" />
   
+  <!-- 구조화 데이터 -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"WebSite","@id":"https://zior.hyunsooshin.com/#website","url":"https://zior.hyunsooshin.com/","name":"Zior","inLanguage":"ko-KR"},
+    {"@type":"Person","@id":"https://zior.hyunsooshin.com/#person","name":"Zior Park","alternateName":["ZIORPARK"],"url":"https://zior.hyunsooshin.com/","image":"https://zior.hyunsooshin.com/ogimage.jpg"}
+  ]}
+  </script>
+
   <!-- 네이버 SEO -->
   <meta name="naver-site-verification" content="5b051de9c5b9fe2350a397573420af60714118e8" />
   <!-- 구글 SEO -->
@@ -85,7 +98,7 @@
 </head>
 
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <noscript>Zior 페이지입니다. 앨범, 사진, 소개를 보려면 JavaScript를 켜주세요.</noscript>
   <div id="root"></div>
   <!--
       This HTML file is a template.

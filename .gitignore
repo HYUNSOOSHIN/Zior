@@ -38,3 +38,5 @@ packages/react-devtools-shell/dist
 packages/react-devtools-scheduling-profiler/dist
 
 .env
+# 빌드 시 생성되는 Plaiceholder 블러 데이터
+public/placeholders.json
